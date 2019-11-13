@@ -4,22 +4,19 @@ from flask_pymongo import pymongo
 from bson.json_util import dumps
 import os
 
-#app = connexion.FlaskApp(__name__, specification_dir='openapi/')
-app=Flask(__name__)
-
+app = connexion.FlaskApp(__name__, specification_dir='openapi/')
+#app=Flask(__name__)
+#app.config['DEBUG'] = True
 url_mongo=os.environ['MONGO_FLASK']
 client = pymongo.MongoClient(url_mongo)
 db = client.ds_db
 
 
-#app.add_api('my_api.yaml', resolver=RestyResolver('api'))
+
 #app.run(port=8080)
 
 api_url = '/api'
 
-@app.route("/")
-def home():
-    return "render_template("
 
 
 @app.route(api_url+'/users', methods=['GET'])
@@ -49,5 +46,6 @@ def create_user():
     return not_found()
 
 if __name__ == "__main__":
-    app.run()
+  app.add_api('my_api.yaml', resolver=connexion.RestyResolver('api'))
+  app.run()
     
