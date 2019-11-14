@@ -1,5 +1,6 @@
 bson
 flask_pymongo
+dnspython
 flask
 connexion
 pytest
