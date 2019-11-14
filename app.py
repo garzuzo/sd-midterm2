@@ -4,7 +4,7 @@ from flask_pymongo import pymongo
 from bson.json_util import dumps
 import os
 from flask_cors import CORS, cross_origin
-app = connexion.FlaskApp(__name__, specification_dir='../openapi/')
+app = connexion.FlaskApp(__name__, specification_dir='openapi/')
 #app=Flask(__name__)
 #app.config['DEBUG'] = True
 url_mongo=os.environ['MONGO_FLASK']

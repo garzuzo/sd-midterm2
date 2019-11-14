@@ -12,24 +12,17 @@ paths:
       summary: Crear un usuario
       description: Crea un usuario en base a los datos de id y nombre ingresados por parametro.
       operationId: app.create_user
+      requestBody:
+        description: Usuario a crear en la base de datos
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/NewUser'
       responses:
         200:
           description: Usuario creado con exito
-      parameters:
-        - name: id
-          in: path
-          description: Identificador del usuario a agregar.
-          required: true
-          schema:
-            type: string
-            example: "23231"
-        - name: name
-          in: path
-          description: Nombre del usuario a agregar.
-          required: true
-          schema:
-            type: string
-            example: "dave"
+
 
     get:
       summary: Extraer la información
@@ -43,3 +36,13 @@ paths:
               schema:
                 type: string
                 example: '[{"_id": {"$oid": "5dcb7fc020f273c7abeb0a7b"}, "id": "1", "name": "Johnatan"}]'
+
+components:
+  schemas:
+    NewUser:
+      type: object
+      properties:
+        id: 
+          type: string
+        name: 
+          type: string

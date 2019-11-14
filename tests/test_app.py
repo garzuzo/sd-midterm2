@@ -3,7 +3,7 @@ import connexion
 import os
 from flask import Flask, request, flash, render_template, jsonify,json
 from flask_pymongo import pymongo
-from backend import app
+import app
 
 
 flask_app = connexion.FlaskApp(__name__, specification_dir='../openapi/')
@@ -20,12 +20,12 @@ def client():
 
 def test_read_clients(client):
         
-        response = client.get('/api/users')
+        response = client.get('/users')
         assert response.status_code == 200
     
 def test_cread_clients(client):
         
-        response = client.get('/api/users')
+        response = client.get('/users')
         assert response.status_code == 200
     
     
