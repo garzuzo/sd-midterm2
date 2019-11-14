@@ -3,8 +3,8 @@ import connexion
 from flask_pymongo import pymongo
 from bson.json_util import dumps
 import os
-
-app = connexion.FlaskApp(__name__, specification_dir='openapi/')
+from flask_cors import CORS, cross_origin
+app = connexion.FlaskApp(__name__, specification_dir='../openapi/')
 #app=Flask(__name__)
 #app.config['DEBUG'] = True
 url_mongo=os.environ['MONGO_FLASK']
@@ -18,6 +18,7 @@ db = client.ds_db
 api_url = '/api'
 
 @app.route(api_url+'/users', methods=['GET'])
+@cross_origin(origin='*')
 def read_user():
   users=db.Users.find({})
   #print(dumps(list(users)))
@@ -26,6 +27,7 @@ def read_user():
 
 
 @app.route(api_url+'/users', methods=['POST'])
+@cross_origin(origin='*')
 def create_user():
   id=request.form['id']
   name=request.form['name']
@@ -43,5 +45,6 @@ def create_user():
 
 if __name__ == "__main__":
   app.add_api('my_api.yaml', resolver=connexion.RestyResolver('api'))
-  app.run()
+
+  app.run(port=3000)
     

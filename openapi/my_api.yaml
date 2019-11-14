@@ -1,10 +1,10 @@
 openapi: "3.0.0"
-
 info:
-  title: Hello World
+  title: Administración de Usuarios
   version: "1.0"
+  
 servers:
-  - url: http://localhost:5000
+  - url: http://localhost:3000
 
 paths:
   /users:
@@ -18,14 +18,14 @@ paths:
       parameters:
         - name: id
           in: path
-          description: Name of the person to greet.
+          description: Identificador del usuario a agregar.
           required: true
           schema:
             type: string
-            example: "dave"
+            example: "23231"
         - name: name
           in: path
-          description: Name of the person to greet.
+          description: Nombre del usuario a agregar.
           required: true
           schema:
             type: string

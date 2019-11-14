@@ -1,0 +1,6 @@
+flask_pymongo
+flask
+connexion
+pytest
+bson
+flask_cors
