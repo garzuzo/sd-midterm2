@@ -3,8 +3,8 @@ import connexion
 import os
 from flask import Flask, request, flash, render_template, jsonify,json
 from flask_pymongo import pymongo
-import app
-
+import imp
+app=imp.load_source('app','backend/app.py')
 
 flask_app = connexion.FlaskApp(__name__, specification_dir='../openapi/')
 flask_app.add_api('my_api.yaml', resolver=connexion.RestyResolver('api'))
