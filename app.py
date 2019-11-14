@@ -17,8 +17,6 @@ db = client.ds_db
 
 api_url = '/api'
 
-
-
 @app.route(api_url+'/users', methods=['GET'])
 def read_user():
   users=db.Users.find({})
@@ -29,8 +27,6 @@ def read_user():
 
 @app.route(api_url+'/users', methods=['POST'])
 def create_user():
-
-        
   id=request.form['id']
   name=request.form['name']
         
