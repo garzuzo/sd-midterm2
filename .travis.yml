@@ -1,10 +1,11 @@
 language: python
 python:
-  - "3.7"
-
-# command to install dependencies
+- '3.7'
 install:
-  - pip install -r requirements.txt
-# command to run tests
+- pip install -r requirements.txt
 script:
-  - pytest
+- pytest
+env:
+  global:
+  - secure: DynQZLPjpMZQSRSZKkQ1sUBXImc0P25EgrUUsa2xfzvHf1xPRJl6CM4BpLJEqfI+T/IIf5DjjcensGlUUaxZgYVVPTY245MlWlV2mJCB3bd252Y27ATnEmovBzDcrHLXyyUMLYGPNk3TxqJaxC+uUFuPlZdeHpfT6rTG+qNIF/zE9zOiT/3GYRnjFkX1AQzrTfR1QU8G/IvFhlsJvYUaqNv1yViVmqyIF/n3MI45L1qNPwiUG3t4d8ipIbrAGBuNzNiTnIeKh2oImkgAzqNbpq5MNDLCeB+8y2eaD3T76ZdcY83Iom0TIGKM6oUuWAjpb1ME/a3ADFI09U6PiJuKgMgevhCLESnaqrAKH7KDNljnXTp+KjOqEGtVatWLCgBBblqt0vTwizDVmDULVyXgRi1eIlrbvdwFb4DarBAtXPHR3D+/jN+P5Lc40Makl+cCJoJnTtDVs3+OZYKjattZiskT/UEMAGUD91U+i4Gbmp2WRW8s5R5pzFFoovzxCmL2RQXjrav+BKl+9wA0gg5WXV+SnbgUCVtDm+GGkEOkZ5wMVfIYrvzY9ScnlnnH+HBB0ID66ZTs/c34rQrMbizo+JcR7d9Kg/6f0+B+ZY7aaoHTX8lzbpI9JT4lxkeIqWCAdj4Yx09IqT9034WefjIe+BIn9dSJPW/RSEgrWjjTyuw=
+ 
