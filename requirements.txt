@@ -1,4 +1,3 @@
-bson
 flask_pymongo
 dnspython
 flask
