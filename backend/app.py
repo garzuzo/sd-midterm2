@@ -8,6 +8,7 @@ app = connexion.FlaskApp(__name__, specification_dir='../openapi/')
 #app=Flask(__name__)
 #app.config['DEBUG'] = True
 url_mongo=os.environ.get("MONGO_FLASK")
+print(url_mongo)
 #url_mongo="mongodb+srv://d_user:distribuidos20192@distribuidos-7a22s.mongodb.net/test?retryWrites=true&w=majority"
 client = pymongo.MongoClient(url_mongo)
 db = client.ds_db
