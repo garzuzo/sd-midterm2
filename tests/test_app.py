@@ -8,7 +8,7 @@ import importlib.machinery
 
 loader = importlib.machinery.SourceFileLoader('app','backend/app.py')
 app = loader.load_module()
-
+#from ..backend import app
 
 flask_app = connexion.FlaskApp(__name__, specification_dir='../openapi/')
 flask_app.add_api('my_api.yaml', resolver=connexion.RestyResolver('api'))
