@@ -23,7 +23,7 @@ paths:
         200:
           description: Usuario creado con exito
 
-
+    
     get:
       summary: Extraer la información
       description: Se extrae información todos los usuarios de la base de datos.
@@ -37,6 +37,24 @@ paths:
                 type: string
                 example: '[{"_id": {"$oid": "5dcb7fc020f273c7abeb0a7b"}, "id": "1", "name": "Johnatan"}]'
 
+
+  /users/{id}:
+    delete:
+      summary: Eliminar usuario
+      description: Se elimina el usuario de la base de datos.
+      operationId: app.delete_user
+      parameters:
+        - name: id
+          in: path
+          description: Identificador del usuario a eliminar
+          required: true
+          schema:
+            type: string
+      responses:
+        204:
+          description: User removed successfully!
+
+
 components:
   schemas:
     NewUser:
@@ -46,3 +64,4 @@ components:
           type: string
         name: 
           type: string
+
