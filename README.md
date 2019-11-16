@@ -237,9 +237,11 @@ Observamos como se carga primero la variable de entorno **MONGO_FLASK**, y luego
 Las tareas que se deben llevar a cabo son:
 
 1. Se deben instalar los requerimientos necesarios que se encuentran en *requirements.txt*
-2. Ejecutar la aplicación *app.py* que se encuentra en la carpeta *backend*
+2. Se exporta la variable de entorno *MONGO_FLASK* que contiene las credenciales para conectarse con la base de datos remota
+3. Ejecutar la aplicación *app.py* que se encuentra en la carpeta *backend*
 ```sh
 $ pip install -r requirements.txt
+$ export MONGO_FLASK=d_user:distribuidos20192
 $ python3 backend/app.py
 ```
 
