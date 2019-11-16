@@ -5,3 +5,4 @@ flask
 connexion
 pytest
 flask_cors
+swagger-ui-py
